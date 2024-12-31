@@ -1,0 +1,304 @@
+@charset "UTF-8";
+/* Graham Dailly */
+/* 13/11/2024 */
+
+html, body {
+    min-height: 100%;
+    margin: 0;
+  }
+
+
+
+body.home {
+    background-image: url('../images/home-background.webp'); /* Correct background image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+body.gears1 {
+    background-image: url('../images/gears-1-background.webp'); /* Correct background image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+body.gears2 {
+    background-image: url('../images/gears-2-background.webp'); /* Correct background image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+body.gears3 {
+    background-image: url('../images/gears3-background.webp'); /* Correct background image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+body.the-cog{
+  background-image: url('../images/the-cog.webp'); /* Correct background image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+body.locust{
+  background-image: url('../images/background-locust.webp'); /* Correct background image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+body.weapons{
+  background-image: url('../images/weapon-background.webp'); /* Correct background image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+
+
+body{
+  color: white;
+
+
+}
+
+#wrapper{ /*adds a wrap for text and images to go in to */
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1000px;
+    min-width: 400px;
+    background-color: rgba(0, 0, 0, 0.712);
+    padding: 20px;
+    border-radius: 8px;
+    color: whitesmoke;
+}
+
+nav{ 
+  display:flex ;
+
+
+}
+
+nav a { /*sets my nav display and size*/
+  display:block;
+  padding: 1rem 2rem; 
+  margin: 0.2rem;
+  text-decoration: none;
+  color: red;
+}
+
+nav a:hover{ /* what happens when cursor is over a nav link*/
+
+  background-color: black;
+  color: white;
+
+}
+
+
+
+.image-container { /*keeps image within my wrapper and does not interfere with background images*/
+  text-align: center; 
+  margin: 20px 0;      
+}
+
+
+.image-container img { 
+  max-width: 100%;  
+  height: auto;    
+}
+
+
+footer.index{ 
+
+  color: white;
+text-align: center;
+  
+}
+
+footer.gears3{
+
+text-align: center;
+}
+
+    
+.logo {
+    background-image: url('../images/Logo.webp');
+    width: 48px;
+    height: 48px;
+    margin: 0.2rem;
+    background-size: contain;  
+    background-repeat: no-repeat;
+    display: inline-block; /* Ensures the background image displays within set dimensions */
+  }
+
+ .character-image { 
+  display: flex; 
+  align-items: center; 
+  margin-bottom: 40px; 
+  }
+  
+.character-img {
+  width: 150px; 
+  height: auto; 
+  margin-right: 20px; 
+  border-radius: 8px;
+} 
+  
+.character-image p {
+  flex-grow: 1; 
+  text-align: justify;     
+  line-height: 1.6; 
+  }
+
+p{  /* adds more to anything within <p> */
+  flex-grow: 1;      
+  line-height: 1.6; 
+}
+
+
+
+.center-text{
+  text-align: center;
+}
+
+
+
+/* Hide the checkbox input by default */
+.menu-checkbox {
+  display: none;
+}
+
+/* For screens larger than 750px */
+@media (min-width: 751px) {
+  .hamburger-menu,
+  .menu-checkbox {
+    display: none; /* Hide hamburger on larger screens */
+  }
+
+  nav {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  nav a {
+    padding: 1rem 2rem;
+    margin: 0.2rem;
+    text-decoration: none;
+    color: red;
+  }
+}
+
+/* Below 750px - Mobile Specific */
+@media (max-width: 750px) {
+  /* Center the logo at 750px */
+  header {
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+
+  .logo {
+    margin: 0 auto;
+    display: block;
+    width: 60px;
+    height: 60px;
+  }
+
+  /* Show the hamburger icon inside the wrapper */
+  .hamburger-menu {
+    display: block;
+    font-size: 2rem;
+    color: red;
+    cursor: pointer; 
+    position: absolute;  /*Positions the hamburger menu absolutely within the header*/
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+  }
+
+  /* Navigation menu (hidden off-screen by default) */
+  nav {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Initially hidden off-screen */
+    width: 250px;
+    height: 50%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+
+  /* When the checkbox is checked, the menu slides in */
+  #menu-toggle:checked ~ nav {
+    left: 0;
+  }
+
+  /* Overlay: Covers the screen when menu is open */
+  .overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent */
+    z-index: 999; /* Behind the menu but above everything else */
+  }
+
+  /* When the checkbox is checked, show the overlay */
+  #menu-toggle:checked ~ .overlay {
+    display: block;
+  }
+
+  /* Adjust padding and spacing for mobile */
+  nav a {
+    padding: 10px;
+    font-size: 1.2rem;
+  }
+
+  /* Ensure that when the checkbox is checked, the hamburger is hidden */
+  #menu-toggle:checked ~ .hamburger-menu {
+    display: none;
+  }
+}
+
+/* Style for the input checkbox and its label */
+input[type="checkbox"] {
+  display: none; /* Hide the checkbox */
+}
+
+label[for="menu-toggle"] {
+  color: red;
+  cursor: pointer;
+  padding: 10px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1001; /* Make sure it's above */
+}
+
+/* Close Button Styling */
+.close-btn {
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  position: absolute; /* Position it at the top-right corner of the menu */
+  right: 10px;
+  z-index: 1001;
+  display: none; /* Initially hidden */
+}
+
+/* Show close button when menu is open */
+#menu-toggle:checked ~ nav .close-btn {
+  display: block;
+}
+
